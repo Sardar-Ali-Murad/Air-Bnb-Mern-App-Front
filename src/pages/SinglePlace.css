@@ -1,0 +1,50 @@
+.imageGrid img{
+   width: 100%;
+   height: 100%;
+   display: flex;
+
+}
+
+
+.imageGrid{
+    display: flex;
+    gap: 10px;
+}
+
+
+.contents{
+    display: flex;
+    gap: 20px;
+    margin-top: 70px;
+    width: 100%;
+}
+
+.book{
+    width: 100%;
+}
+/* .des{
+    flex: 1;
+}
+
+.book{
+    flex: 2;
+} */
+
+@media screen and (max-width:900px) {
+    .imageGrid{
+        flex-direction: column;
+    }
+    .contents{
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .singleMain{
+        width: 100%;
+    }
+    .des{
+        width: 100%;
+    }
+    .book{
+        padding: 20px;
+    }
+}

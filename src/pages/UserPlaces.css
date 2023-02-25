@@ -1,0 +1,14 @@
+.singleUserPlace{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:1000px) {
+ .singleUserPlace{
+    flex-direction: column;
+ }    
+}

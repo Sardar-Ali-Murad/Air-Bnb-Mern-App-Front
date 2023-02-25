@@ -36,7 +36,7 @@ export const addPlace = async (_, thunkAPI) => {
       privateEntrance,
     } = thunkAPI.getState().place;
     let data = await axios.post(
-      "http://localhost:5000/api/v1/place",
+      "https://air-bnb-back.vercel.app/api/v1/place",
       {
         Address,
         Title,
@@ -68,7 +68,7 @@ export const addPlace = async (_, thunkAPI) => {
 export const getPlaces = async (_, thunkAPI) => {
   try {
     let token = thunkAPI.getState().store.token;
-    let data = await axios.get("http://localhost:5000/api/v1/place", {
+    let data = await axios.get("https://air-bnb-back.vercel.app/api/v1/place", {
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -83,7 +83,7 @@ export const singlePlace = async (placeId, thunkAPI) => {
   try {
     let token = thunkAPI.getState().store.token;
     let data = await axios.get(
-      `http://localhost:5000/api/v1/place/${placeId}`,
+      `https://air-bnb-back.vercel.app/api/v1/place/${placeId}`,
       {
         headers: {
           authorization: `Bearer ${token}`,
@@ -100,7 +100,7 @@ export const userPlaces = async (placeId, thunkAPI) => {
   try {
     let token = thunkAPI.getState().store.token;
     let data = await axios.get(
-      `http://localhost:5000/api/v1/place/currentUserPlaces`,
+      `https://air-bnb-back.vercel.app/api/v1/place/currentUserPlaces`,
       {
         headers: {
           authorization: `Bearer ${token}`,
@@ -118,7 +118,7 @@ export const editSinglePlace = async (id, thunkAPI) => {
   try {
     let token = thunkAPI.getState().store.token;
     let data = await axios.get(
-      `http://localhost:5000/api/v1/place/${id}`,
+      `https://air-bnb-back.vercel.app/api/v1/place/${id}`,
       {
         headers: {
           authorization: `Bearer ${token}`,
@@ -154,7 +154,7 @@ export const edditingPlace = async (_, thunkAPI) => {
       privateEntrance,
     } = thunkAPI.getState().place;
     let data = await axios.patch(
-      `http://localhost:5000/api/v1/place/${editPlaceId}`,
+      `https://air-bnb-back.vercel.app/api/v1/place/${editPlaceId}`,
       {
         Address,
         Title,
@@ -188,7 +188,7 @@ export const makeBook = async (payload, thunkAPI) => {
   try {
     let token = thunkAPI.getState().store.token;
     let data = await axios.post(
-      `http://localhost:5000/api/v1/book`,
+      `https://air-bnb-back.vercel.app/api/v1/book`,
       {place:payload.place,startDate:payload.startDate,endDate:payload.endDate,totalGuests:Number(payload.totalGuests)},
       {
         headers: {
@@ -208,7 +208,7 @@ export const getUserBookings = async (_, thunkAPI) => {
   try {
     let token = thunkAPI.getState().store.token;
     let data = await axios.get(
-      `http://localhost:5000/api/v1/book/currentUserBookings`,
+      `https://air-bnb-back.vercel.app/api/v1/book/currentUserBookings`,
       {
         headers: {
           authorization: `Bearer ${token}`,
@@ -226,7 +226,7 @@ export const deleteBooking = async (bookingId, thunkAPI) => {
   try {
     let token = thunkAPI.getState().store.token;
     let data = await axios.delete(
-      `http://localhost:5000/api/v1/book/${bookingId}`,
+      `https://air-bnb-back.vercel.app/api/v1/book/${bookingId}`,
       {
         headers: {
           authorization: `Bearer ${token}`,

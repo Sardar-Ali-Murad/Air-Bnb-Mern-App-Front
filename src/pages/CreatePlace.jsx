@@ -62,10 +62,10 @@ const createPlace = () => {
 
   return (
     <div className="div-center-80" style={{ marginTop: "50px" }} ref={main}>
-      {place.showAlert && <Alert />}
       <h3 className="text-center">
         {place.editPlace ? "Edit Place" : "Create Place"}
       </h3>
+      {place.showAlert && <Alert />}
       <FormRow
         name="Title"
         label="Title"
